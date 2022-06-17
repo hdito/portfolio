@@ -2,6 +2,7 @@ import { styled } from "@linaria/react";
 import { css } from "@linaria/core";
 import { nanoid } from "nanoid";
 import { useState } from "react";
+import { ThemeSwitcher } from "./ThemeSwitcher";
 
 const globals = css`
   :global() {
@@ -10,7 +11,8 @@ const globals = css`
       src: url(./src/Rubik-VariableFont_wght.ttf);
     }
     html,
-    body {
+    body,
+    #root {
       height: 100%;
     }
     body,
@@ -19,93 +21,98 @@ const globals = css`
     h2 {
       margin: 0;
     }
-    h1,
-    h2 {
-      color: hsl(0, 0%, 0%);
-    }
-    h2 {
-      font-size: 1.25em;
-    }
     :root {
-      --main-color: hsl(208, 100%, 38%);
-      --second-color: hsl(165, 100%, 20%);
+      --dark-gray: hsl(0, 0%, 20%);
+      --black: hsl(0, 0%, 0%);
+      --light-gray: hsl(0, 0%, 80%);
+      --white: hsl(0, 0%, 100%);
+      --blue: hsl(208, 100%, 38%);
+      --light-blue: hsl(208, 100%, 70%);
+      --dark-green: hsl(165, 100%, 20%);
+      --light-green: hsl(150, 100%, 60%);
       font-family: Rubik, Arial, sans-serif;
-      color: hsl(0, 0%, 20%);
     }
   }
 `;
-const CardContainer = styled.div`
+const ButtonContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
   grid-column: 2/5;
   max-width: 80ch;
+  margin-bottom: 1rem;
 `;
-const ProjectCard = styled.button`
+const ProjectButton = styled.button`
   border: none;
   text-decoration: none;
-  color: inherit;
+  color: ${(props) =>
+    props.isDarkTheme
+      ? "var(--dark-gray)"
+      : props.isActive
+      ? "var(--white)"
+      : "var(--dark-gray)"};
   font-size: 1rem;
   padding: 0.5rem 1em;
-  background: hsl(0, 0%, 90%);
+  background: ${(props) =>
+    !props.isActive
+      ? "hsl(0, 0%, 90%)"
+      : props.isDarkTheme
+      ? "var(--light-green)"
+      : "var(--dark-green)"};
   border-radius: 0.5rem;
   text-align: center;
   transition: all 0.2s;
   cursor: default;
   &:hover {
-    outline: 0.15rem solid var(--second-color);
+    outline: 0.15rem solid
+      ${(props) =>
+        props.isDarkTheme ? "var(--light-green)" : "var(--dark-green)"};
     outline-offset: 0.15rem;
   }
 `;
 const AppContainer = styled.div`
-  display: grid;
-  grid-template-columns: 1fr auto auto auto 1fr;
+  display: flex;
   flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
   height: 100%;
   padding: 1rem;
-  align-items: center;
-  gap: 1rem;
+  color: ${(props) =>
+    props.isDarkTheme ? "var(--light-gray)" : "var(--dark-gray)"};
+  background: ${(props) =>
+    props.isDarkTheme ? "var(--dark-gray)" : "var(--white)"};
+  & h1,
+  h2 {
+    color: ${(props) => (props.isDarkTheme ? "var(--white)" : "var(--black)")};
+  }
 `;
 const HeaderContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
   max-width: 50ch;
-  grid-column: 3/4;
-  margin-bottom: 2rem;
-`;
-const MainContainer = styled.main`
-  margin-bottom: auto;
-  max-width: 80ch;
-  grid-column:3/4
-  display: flex;
-  flex-direction: column;
-  max-width: 80ch;
-
 `;
 const LinkBox = styled.div`
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+  color: ${(props) =>
+    props.isDarkTheme ? "var(--light-blue)" : "var(--blue)"};
 `;
 const CLink = styled.a`
   text-decoration: none;
-  color: var(--main-color);
+  color: inherit;
   font-size: 1.25rem;
   &:hover {
     text-decoration: underline;
   }
 `;
 const ProjectInfo = styled.div`
-  grid-column: 2/5;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   max-width: 80ch;
-`;
-const active = css`
-  color: white;
-  background: var(--second-color);
 `;
 interface IProjects {
   [key: string]: {
@@ -154,61 +161,87 @@ const projects: IProjects = {
     codeSource: "something.com",
   },
 };
-
+const FlexWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+`;
 function App() {
+  const [isDarkTheme, setIsDarkTheme] = useState(
+    window.matchMedia("prefers-color-scheme: dark").matches
+  );
   const [selectedProject, setSelectedProject] = useState("");
   return (
-    <AppContainer>
-      <HeaderContainer>
-        <h1>Name Surname</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi et sequi
-          soluta voluptates, iste dolor suscipit voluptas. Nihil nisi quisquam
-          ullam eum, ea a, repellendus, quos eveniet adipisci quidem eius!
-        </p>
-        <LinkBox>
-          <CLink href="">@oh</CLink>
-          <CLink href="">email@gmail.com</CLink>
-        </LinkBox>
-      </HeaderContainer>
-      <MainContainer>
-        <h1>My projects</h1>
-      </MainContainer>
-      <CardContainer>
-        {Object.keys(projects).map((key) => (
-          <ProjectCard
-            className={key === selectedProject ? active : ""}
-            onClick={() => setSelectedProject(key)}
-            href=""
-          >
-            {projects[key].title}
-          </ProjectCard>
-        ))}
-      </CardContainer>
-      {selectedProject !== "" && (
-        <ProjectInfo>
-          <div
-            style={{ display: "flex", alignItems: "baseline", gap: "0.3rem" }}
-          >
-            <h2>Stack: </h2>
-            <p>{projects[selectedProject].stack}</p>
+    <AppContainer isDarkTheme={isDarkTheme}>
+      <FlexWrapper>
+        <HeaderContainer>
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <h1>Name Surname</h1>
+            <ThemeSwitcher
+              isDarkTheme={isDarkTheme}
+              onThemeChange={(theme) => setIsDarkTheme(theme)}
+            />
           </div>
-          <p>{projects[selectedProject].description}</p>
-          {(projects[selectedProject].codeSource ||
-            projects[selectedProject].website) && (
-            <LinkBox>
-              {projects[selectedProject].website && (
-                <CLink href={projects[selectedProject].website}>Website</CLink>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi et
+            sequi soluta voluptates, iste dolor suscipit voluptas. Nihil nisi
+            quisquam ullam eum, ea a, repellendus, quos eveniet adipisci quidem
+            eius!
+          </p>
+          <LinkBox isDarkTheme={isDarkTheme}>
+            <CLink href="">@oh</CLink>
+            <CLink href="">email@gmail.com</CLink>
+          </LinkBox>
+          <h1>My projects</h1>
+        </HeaderContainer>
+      </FlexWrapper>
+      <FlexWrapper></FlexWrapper>
+      <FlexWrapper>
+        <div>
+          <ButtonContainer>
+            {Object.keys(projects).map((key) => (
+              <ProjectButton
+                isDarkTheme={isDarkTheme}
+                isActive={key === selectedProject}
+                key={key}
+                onClick={() => setSelectedProject(key)}
+                href=""
+              >
+                {projects[key].title}
+              </ProjectButton>
+            ))}
+          </ButtonContainer>
+          {selectedProject !== "" && (
+            <ProjectInfo>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "baseline",
+                  gap: "0.3rem",
+                }}
+              >
+                <h2>Stack: </h2>
+                <p>{projects[selectedProject].stack}</p>
+              </div>
+              <p>{projects[selectedProject].description}</p>
+              {(projects[selectedProject].codeSource ||
+                projects[selectedProject].website) && (
+                <LinkBox isDarkTheme={isDarkTheme}>
+                  {projects[selectedProject].website && (
+                    <CLink href={projects[selectedProject].website}>
+                      Website
+                    </CLink>
+                  )}
+                  {projects[selectedProject].codeSource && (
+                    <CLink href={projects[selectedProject].codeSource}>
+                      Source code
+                    </CLink>
+                  )}
+                </LinkBox>
               )}
-              {projects[selectedProject].codeSource && (
-                <CLink href={projects[selectedProject].codeSource}>
-                  Source code
-                </CLink>
-              )}
-            </LinkBox>
+            </ProjectInfo>
           )}
-        </ProjectInfo>
-      )}
+        </div>
+      </FlexWrapper>
     </AppContainer>
   );
 }
