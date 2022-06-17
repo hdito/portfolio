@@ -38,7 +38,6 @@ const ButtonContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  grid-column: 2/5;
   max-width: 80ch;
   margin-bottom: 1rem;
 `;
@@ -61,7 +60,6 @@ const ProjectButton = styled.button`
       : "var(--dark-green)"};
   border-radius: 0.5rem;
   text-align: center;
-  transition: all 0.2s;
   cursor: default;
   &:hover {
     outline: 0.15rem solid
@@ -81,6 +79,8 @@ const AppContainer = styled.div`
     props.isDarkTheme ? "var(--light-gray)" : "var(--dark-gray)"};
   background: ${(props) =>
     props.isDarkTheme ? "var(--dark-gray)" : "var(--white)"};
+  transition: all 0.2s;
+
   & h1,
   h2 {
     color: ${(props) => (props.isDarkTheme ? "var(--white)" : "var(--black)")};
