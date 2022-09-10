@@ -57,10 +57,12 @@ export const App = () => {
   ];
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
   return (
-    <div className="min-h-screen h-full flex flex-col items-center gap-4 p-4 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 transition-all duration-100">
+    <div className="font-josefin min-h-screen h-full flex flex-col items-center gap-4 p-4 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 transition-all duration-200">
       <div className="flex max-w-sm flex-col gap-2 justify-center">
-        <div className="flex justify-between">
-          <h1 className="text-2xl font-bold">Name Surname</h1>
+        <div className="flex justify-between relative">
+          <h1 className="text-gray-900 dark:text-gray-50 text-2xl font-bold">
+            Имя Фамилия
+          </h1>
           <ThemeSwitcher />
         </div>
         <p>
@@ -76,13 +78,15 @@ export const App = () => {
             email@gmail.com
           </a>
         </div>
-        <h1 className="text-2xl font-bold">My projects</h1>
+        <h1 className="text-gray-900 dark:text-gray-50 text-2xl font-bold">
+          Мои проекты
+        </h1>
       </div>
       <div className="flex flex-col gap-2 justify-between">
         <div className="flex flex-wrap gap-4 max-w-prose">
           {projects.map((project, index) => (
             <button
-              className={`py-2 px-4 border-2 border-gray-700 dark:border-gray-100 text-center hover:shadow-[4px_4px_0_0_#374151] dark:hover:shadow-[4px_4px_0_0_#f9fafb] transition-all duration-100 ${
+              className={`py-2 px-4 border-2 border-gray-700 dark:border-gray-100 text-center hover:shadow-[4px_4px_0_0_#374151] dark:hover:shadow-[4px_4px_0_0_#f9fafb] transition-all duration-200 ease-in-out ${
                 index === selectedProject
                   ? "bg-orange-600 text-gray-50"
                   : "bg-gray-200 text-gray-800 dark:bg-gray-600 dark:text-gray-50"
@@ -94,10 +98,12 @@ export const App = () => {
             </button>
           ))}
         </div>
-        {selectedProject && (
+        {selectedProject !== null && (
           <div className="flex flex-col gap-2 max-w-prose">
             <div className="flex items-baseline gap-1">
-              <h2 className="text-lg font-bold">Stack: </h2>
+              <h2 className="text-gray-900 dark:text-gray-50 text-lg font-bold">
+                Стэк:{" "}
+              </h2>
               <p>{projects[selectedProject].stack}</p>
             </div>
             <p>{projects[selectedProject].description}</p>
