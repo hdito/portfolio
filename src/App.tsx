@@ -57,7 +57,7 @@ export const App = () => {
   ];
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
   return (
-    <div className="font-josefin min-h-screen h-full flex flex-col items-center gap-4 p-4 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 transition-all duration-200">
+    <div className="font-jost min-w-min min-h-screen h-full flex flex-col items-center gap-3 p-4 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 transition-all duration-200">
       <div className="flex max-w-sm flex-col gap-2 justify-center">
         <div className="flex justify-between relative">
           <h1 className="text-gray-900 dark:text-gray-50 text-2xl font-bold">
