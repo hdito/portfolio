@@ -3,6 +3,6 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: josefin-sans;
-  src: url("../docs/JosefinSans-VariableFont_wght.ttf");
+  font-family: jost;
+  src: url("./Jost-VariableFont_wght.ttf");
 }

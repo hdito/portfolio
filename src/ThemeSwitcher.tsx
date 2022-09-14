@@ -22,7 +22,7 @@ export const ThemeSwitcher = () => {
 
   return (
     <button
-      className="h-12 absolute -top-4 right-0 flex justify-center items-end p-1 text-2xl text-gray-50 dark:text-gray-800 rounded-b-full bg-gray-800 dark:bg-gray-50 "
+      className="h-12 absolute -top-4 right-0 flex justify-center items-end p-1 text-2xl text-white dark:text-gray-800 rounded-b-full bg-gray-800 dark:bg-gray-50 "
       onClick={() => setDarkTheme((prev) => !prev)}
     >
       {darkTheme ? (
