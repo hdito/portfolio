@@ -1,126 +1,65 @@
-import { nanoid } from "nanoid";
-import { useState } from "react";
+import { FaTelegramPlane } from "react-icons/fa";
+import { GrMail } from "react-icons/gr";
+import { ProjectCard } from "./ProjectCard";
+import { projects } from "./projects";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 
-interface IProject {
-  id: string;
-  title: string;
-  stack: string;
-  description: string;
-  codeSource?: string;
-  website?: string;
-}
-const projects: IProject[] = [
-  {
-    id: nanoid(),
-    title: "Где Перепечко?",
-    stack: "React, TypeScript, Vite, Firebase, Linaria",
-    description:
-      "Летом 2022-го я разработал интерактивную версию игры из группы в VK «Где перепечко?». В приложении на различных карточках необходимо найти спрятанного курсанта Перепечко. Первоначально изображения для игры были жёстко закодированы, но потом я перенёс их в облачное хранилище Cloud Storage от Firebase. Таким образом, для добавления новых карточек больше не нужно изменять код приложения — достаточно загрузить картинки в облако и прописать в базе данных координаты Перепечко. Проект сделан для онлайн-курса The Odin Project.",
-    codeSource: "https://github.com/hdito/gdeperepechko",
-    website: "https://gdeperepechko.web.app/",
-  },
-  {
-    id: nanoid(),
-    title: "Shopping list",
-    stack: "React, TypeScript, Vite, Firebase, Tailwind",
-    description:
-      "Приложение, позволяющее создавать и совместно редактировать списки покупок.",
-    codeSource: "https://github.com/hdito/shopping-list",
-    website: "https://shopping-list-1e7b4.web.app",
-  },
-];
-
 export const App = () => {
-  const [selectedProject, setSelectedProject] = useState<number | null>(null);
   return (
-    <div className="font-jost min-w-min min-h-screen h-full flex flex-col items-center gap-3 p-4 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 transition-all duration-200">
-      <div className="flex max-w-sm flex-col gap-2 justify-center">
+    <div className="flex flex-col items-center font-jost min-h-screen text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-900">
+      <div className="px-4 sm:px-0 flex flex-col gap-4 justify-center sm:max-w-columns-8-1280 2xl:max-w-columns-6-1920 py-4 pb-12">
         <div className="flex justify-between relative">
-          <h1 className="text-gray-900 dark:text-gray-50 text-3xl font-bold">
+          <h1 className="text-black dark:text-gray-50 text-3xl font-bold">
             Егор <br />
             Ермолаев
           </h1>
           <ThemeSwitcher />
         </div>
         <p>
-          Front-end разработчик, специализирующийся на Typescript, React, Vite и
-          Tailwind CSS
+          Привет! Я фронтэндер, специализирующийся на Typescript, React, Vite и
+          Tailwind&nbsp;CSS. Также у меня есть опыт работы с Linaria и Redux в
+          связке с Redux&#8209;Saga.
         </p>
-        <div className="flex gap-4 flex-wrap mb-8 text-blue-800 dark:text-blue-200">
+        <p>
+          Если хотите посотрудничать, вы можете связаться со мной через Telegram
+          или Gmail.
+        </p>
+        <div className="flex gap-4 flex-wrap text-white">
           <a
-            className="no-underline text-lg hover:underline"
+            className="no-underline text-lg"
             href="https://t.me/hditow"
             target="_blank"
             rel="noopener noreferrer"
           >
-            @hditow
+            <button className="flex gap-2 items-center bg-tg-blue rounded-full px-4 py-1 hover:opacity-80 transition-opacity duration-200">
+              <FaTelegramPlane />
+              <div>@hditow</div>
+            </button>
           </a>
           <a
-            className="no-underline text-lg hover:underline"
+            className="no-underline text-lg"
             href="mailto:hditow@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
           >
-            hditow@gmail.com
+            <button className="flex gap-2 items-center bg-blue-700 rounded-full px-4 py-1 hover:opacity-80 transition-opacity duration-200">
+              <GrMail />
+              <div>hditow@gmail.com</div>
+            </button>
           </a>
         </div>
-        <h1 className="text-gray-900 dark:text-gray-50 text-2xl font-bold">
-          Мои проекты
-        </h1>
       </div>
-      <div className="max-w-lg w-full flex flex-col gap-2">
-        <div className="self-start flex flex-wrap gap-4">
-          {projects.map((project, index) => (
-            <button
-              className={`py-2 px-4 border-2 border-gray-700 dark:border-gray-100 text-center hover:shadow-[4px_4px_0_0_#374151] dark:hover:shadow-[4px_4px_0_0_#f9fafb] transition-all duration-200 ease-in-out ${
-                index === selectedProject
-                  ? "bg-orange-600 text-gray-50"
-                  : "bg-gray-200 text-gray-800 dark:bg-gray-600 dark:text-gray-50"
-              }`}
-              key={project.id}
-              onClick={() => setSelectedProject(index)}
-            >
-              {project.title}
-            </button>
-          ))}
+      <div className="px-4 sm:px-0 relative border-2 border-black dark:border-gray-50 w-full">
+        <div className="sm:max-w-columns-8-1280 2xl:max-w-columns-6-1920 w-full m-auto">
+          <h2 className="absolute -translate-y-1/2 bg-white dark:bg-gray-900 text-black border-4 border-black dark:border-gray-50 px-2 dark:text-gray-50 text-2xl font-bold">
+            Мои проекты
+          </h2>
         </div>
-        {selectedProject !== null && (
-          <div className="flex flex-col gap-2 max-w-prose">
-            <div className="flex items-baseline gap-1">
-              <h2 className="text-gray-900 dark:text-gray-50 text-lg font-bold">
-                Стэк:
-              </h2>
-              <p>{projects[selectedProject].stack}</p>
-            </div>
-            <p>{projects[selectedProject].description}</p>
-            {(projects[selectedProject].codeSource ||
-              projects[selectedProject].website) && (
-              <div className="flex gap-4 flex-wrap text-blue-800 dark:text-blue-200">
-                {projects[selectedProject].website && (
-                  <a
-                    className="no-underline text-lg hover:underline"
-                    href={projects[selectedProject].website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Сайт
-                  </a>
-                )}
-                {projects[selectedProject].codeSource && (
-                  <a
-                    className="no-underline text-lg hover:underline"
-                    href={projects[selectedProject].codeSource}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Код
-                  </a>
-                )}
-              </div>
-            )}
-          </div>
-        )}
+      </div>
+      <div className="sm:max-w-columns-12-1280 2xl:max-w-columns-12-1920 w-full grid grid-cols-[repeat(auto-fit,_minmax(200px,_1fr))] px-4 gap-4 pt-12 pb-4 lg:px-0">
+        {projects.map((project) => (
+          <ProjectCard key={project.id} project={project} />
+        ))}
       </div>
     </div>
   );
