@@ -4,11 +4,11 @@ import { project } from "./projectType";
 export const projects: project[] = [
   {
     id: nanoid(),
-    title: "Где Перепечко?",
-    stack: "React, TypeScript, Firebase, Linaria.",
-    description: "Игра из одноимённой группы в VK.",
-    codeSource: "https://github.com/hdito/gdeperepechko",
-    website: "https://gdeperepechko.web.app/",
+    title: "Minimarkdown",
+    stack: "React, Typescript, Redux, Firebase, Tailwind CSS, i18next.",
+    description: "Минималистичный текстовый редактор с поддержкой Markdown.",
+    codeSource: "https://github.com/hdito/minimarkdown",
+    website: "https://minimarkdown.web.app/",
   },
   {
     id: nanoid(),
@@ -21,10 +21,10 @@ export const projects: project[] = [
   },
   {
     id: nanoid(),
-    title: "Minimarkdown",
-    stack: "React, Typescript, Redux, Firebase, Tailwind CSS, i18next.",
-    description: "Минималистичный текстовый редактор с поддержкой Markdown.",
-    codeSource: "https://github.com/hdito/minimarkdown",
-    website: "https://minimarkdown.web.app/",
+    title: "Где Перепечко?",
+    stack: "React, TypeScript, Firebase, Linaria.",
+    description: "Игра из одноимённой группы в VK.",
+    codeSource: "https://github.com/hdito/gdeperepechko",
+    website: "https://gdeperepechko.web.app/",
   },
 ];

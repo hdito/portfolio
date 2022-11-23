@@ -1,10 +1,12 @@
+const { fontFamily } = require("tailwindcss/defaultTheme");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: "class",
   content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"],
   theme: {
     extend: {
-      fontFamily: { jost: ["jost", "sans-serif"] },
+      fontFamily: { jost: ["var(--font-jost)", ...fontFamily.sans] },
       colors: { "tg-blue": "#3aa3e0" },
       maxWidth: {
         "columns-8-1280": "448px",

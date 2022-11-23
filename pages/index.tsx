@@ -6,7 +6,7 @@ import { ThemeSwitcher } from "../components/themeSwitcher";
 
 export default function Portfolio() {
   return (
-    <div className="flex flex-col items-center font-jost min-h-screen text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-900">
+    <div className="font-jost flex flex-col items-center min-h-screen text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-900">
       <div className="px-4 sm:px-0 flex flex-col gap-4 justify-center sm:max-w-columns-8-1280 2xl:max-w-columns-6-1920 py-4 pb-12">
         <div className="flex justify-between relative">
           <h1 className="text-black dark:text-gray-50 text-3xl font-bold">
