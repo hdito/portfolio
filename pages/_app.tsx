@@ -1,6 +1,6 @@
 import { AppProps } from "next/app";
 import Head from "next/head";
-import { jost } from "../components/jost";
+import { notoSans } from "../components/fonts";
 import "../styles/globals.css";
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -10,7 +10,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <title>Портфолио</title>
         <meta name="description" content="Персональное портфолио" />
       </Head>
-      <main className={jost.variable}>
+      <main className={notoSans.variable}>
         <Component {...pageProps} />
       </main>
     </>

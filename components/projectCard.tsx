@@ -1,34 +1,37 @@
 import { IoGlobeOutline, IoLogoGithub } from "react-icons/io5";
+import { FiExternalLink } from "react-icons/fi";
 import { project } from "./projectType";
 
 export const ProjectCard = ({ project }: { project: project }) => {
   return (
     <div
       key={project.id}
-      className="flex flex-col gap-2 leading-snug border-4 border-black dark:border-gray-50 px-2 py-2 hover:-translate-y-1 transition-transform duration-200 self-start"
+      className="flex flex-col gap-2 leading-tight border rounded-lg shadow-md shadow-slate-400 border-slate-200 dark:shadow-none dark:bg-slate-800 dark:border-none p-4 pb-5"
     >
-      <h3 className="font-bold text-xl text-black dark:text-gray-50">
-        {project.title}
-      </h3>
+      <h3 className="font-bold text-xl dark:text-gray-50">{project.title}</h3>
       <p className="mb-4">
-        <span className="inline-block mr-1 text-black dark:text-gray-50 font-bold">
-          Стэк:
-        </span>
+        <span className="inline-block mr-1 font-bold">Стэк:</span>
         <span>{project.stack}</span>
       </p>
-      <p>{project.description}</p>
-      <div className="flex wrap gap-2">
-        <a href={project.website} target="_blank" rel="noopener noreferrer">
-          <button className="flex gap-1 items-center rounded-full p-1 pr-3 bg-gray-700 dark:bg-gray-300 dark:text-gray-800 text-white hover:opacity-80 transition-opacity duration-200">
-            <IoGlobeOutline className="text-2xl" />
-            Сайт
-          </button>
+      <p className="flex-1 mb-4">{project.description}</p>
+      <div className="flex wrap gap-4">
+        <a
+          className="flex gap-1 items-center underline underline-offset-[6px] decoration-2 decoration-blue-600 dark:decoration-blue-400 hover:no-underline"
+          href={project.website}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span className="text-blue-600 dark:text-blue-400">Сайт</span>
+          <FiExternalLink />
         </a>
-        <a href={project.codeSource} target="_blank" rel="noopener noreferrer">
-          <button className="flex gap-1 items-center rounded-full p-1 pr-3 bg-gray-700 text-white dark:bg-gray-300 dark:text-gray-800 hover:opacity-80 transition-opacity duration-200">
-            <IoLogoGithub className="text-2xl" />
-            Код
-          </button>
+        <a
+          className="flex gap-1 items-center underline underline-offset-[6px] decoration-2 decoration-blue-600 dark:decoration-blue-400 hover:no-underline"
+          href={project.codeSource}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span className="text-blue-600 dark:text-blue-400">Код</span>
+          <FiExternalLink />
         </a>
       </div>
     </div>

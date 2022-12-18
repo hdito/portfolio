@@ -6,7 +6,9 @@ module.exports = {
   content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"],
   theme: {
     extend: {
-      fontFamily: { jost: ["var(--font-jost)", ...fontFamily.sans] },
+      fontFamily: {
+        noto: ["var(--font-noto)", ...fontFamily.sans],
+      },
       colors: { "tg-blue": "#3aa3e0" },
       maxWidth: {
         "columns-8-1280": "448px",
