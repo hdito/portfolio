@@ -12,6 +12,14 @@ export const projects: project[] = [
   },
   {
     id: nanoid(),
+    title: "Pomodoro",
+    stack: "Next.js, Typescript, Redux, Sass.",
+    description: "Таймер для работы по методу помодоро со списком дел.",
+    codeSource: "https://github.com/hdito/pomodoro",
+    website: "https://pomodoro.vercel.app",
+  },
+  {
+    id: nanoid(),
     title: "Shopping list",
     stack: "React, TypeScript, Firebase, Tailwind CSS.",
     description:
