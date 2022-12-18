@@ -11,7 +11,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="description" content="Персональное портфолио" />
       </Head>
       <main className={jost.variable}>
-        <Component {...pageProps} />;
+        <Component {...pageProps} />
       </main>
     </>
   );
