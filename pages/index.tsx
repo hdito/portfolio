@@ -17,8 +17,8 @@ export default function Portfolio() {
         </div>
         <p>
           Привет! Я фронтэндер, специализирующийся на Typescript, React, Vite и
-          Tailwind&nbsp;CSS. Также у меня есть опыт работы с Linaria и Redux в
-          связке с Redux&#8209;Saga.
+          Tailwind&nbsp;CSS. Также у меня есть опыт работы с Next.js, Sass,
+          PostCSS, Linaria и Redux в связке с Redux&#8209;Saga.
         </p>
         <p>
           Если хотите посотрудничать, вы можете связаться со мной через Telegram
