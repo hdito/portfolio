@@ -1,7 +1,7 @@
 import { nanoid } from "nanoid";
-import { project } from "./projectType";
+import { Project } from "@/types/projectType";
 
-export const projects: project[] = [
+export const projects: Project[] = [
   {
     id: nanoid(),
     title: "Minimarkdown",

@@ -1,8 +1,8 @@
 import { FaTelegramPlane } from "react-icons/fa";
 import { GrMail } from "react-icons/gr";
-import { ProjectCard } from "../components/projectCard";
-import { projects } from "../components/projects";
-import { ThemeSwitcher } from "../components/themeSwitcher";
+import { ProjectCard } from "@/components/projectCard";
+import { projects } from "@/components/projects";
+import { ThemeSwitcher } from "@/components/themeSwitcher";
 
 export default function Portfolio() {
   return (

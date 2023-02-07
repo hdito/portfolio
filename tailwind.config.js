@@ -3,7 +3,7 @@ const { fontFamily } = require("tailwindcss/defaultTheme");
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: "class",
-  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"],
+  content: ["./**/*.tsx"],
   theme: {
     extend: {
       fontFamily: {
@@ -14,7 +14,7 @@ module.exports = {
         "columns-8-1280": "448px",
         "columns-12-1280": "680px",
         "columns-6-1920": "592px",
-        "columns-12-1920": "1280",
+        "columns-12-1920": "1280px",
       },
     },
   },

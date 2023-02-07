@@ -1,8 +1,7 @@
-import { IoGlobeOutline, IoLogoGithub } from "react-icons/io5";
+import { Project } from "@/types/projectType";
 import { FiExternalLink } from "react-icons/fi";
-import { project } from "./projectType";
 
-export const ProjectCard = ({ project }: { project: project }) => {
+export const ProjectCard = ({ project }: { project: Project }) => {
   return (
     <div
       key={project.id}
