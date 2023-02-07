@@ -16,13 +16,13 @@ export default function Portfolio() {
           <ThemeSwitcher />
         </div>
         <p>
-          Привет! Я фронтэндер, специализирующийся на Typescript, React, Vite и
-          Tailwind&nbsp;CSS. Также у меня есть опыт работы с Next.js, Sass,
-          PostCSS, Linaria и Redux в связке с Redux&#8209;Saga.
+          Привет! Я фронтэндер, специализирующийся на стеке из Typescript,
+          React, Vite и Tailwind&nbsp;CSS. Также у меня есть опыт работы с
+          Next.js, Sass, PostCSS, Linaria и Redux в связке с Redux&#8209;Saga.
         </p>
         <p>
           Если хотите посотрудничать, вы можете связаться со мной через Telegram
-          или Gmail.
+          или по почте.
         </p>
         <div className="space-y-2">
           <a
@@ -47,13 +47,15 @@ export default function Portfolio() {
           </a>
         </div>
       </div>
-      <div className="sm:max-w-columns-8-1280 2xl:max-w-columns-6-1920 w-full m-auto px-4 lg:px-0">
+      <div className="sm:max-w-columns-8-1280 2xl:max-w-columns-6-1920 w-full m-auto px-4 sm:px-0">
         <h2 className="text-2xl font-bold dark:text-gray-50">Мои проекты</h2>
       </div>
-      <div className="sm:max-w-columns-12-1280 2xl:max-w-columns-12-1920 w-full grid grid-cols-[repeat(auto-fit,_minmax(200px,_1fr))] p-4 gap-4 lg:px-0 lg:pb-8">
-        {projects.map((project) => (
-          <ProjectCard key={project.id} project={project} />
-        ))}
+      <div className="flex-1 sm:max-w-columns-12-1280 2xl:max-w-columns-12-1920 w-full p-4 lg:px-0 sm:pb-8">
+        <div className="grid grid-cols-[repeat(auto-fit,_minmax(250px,_1fr))] gap-4 sm:gap-12">
+          {projects.map((project) => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
+        </div>
       </div>
     </div>
   );
