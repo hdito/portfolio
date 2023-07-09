@@ -4,6 +4,22 @@ import { Project } from "@/types/projectType";
 export const projects: Project[] = [
   {
     id: nanoid(),
+    title: "Blog API",
+    stack: "Express, Typescript, Mongoose, Swagger",
+    description: "API для блога с комментариями.",
+    codeSource: "https://github.com/hdito/blog-api",
+    website: "https://blog-api-production-3e1e.up.railway.app",
+  },
+  {
+    id: nanoid(),
+    title: "Blog Client",
+    stack: "Vue, Typescript, Tailwind CSS.",
+    description: "Клиентское приложение для Blog API.",
+    codeSource: "https://github.com/hdito/blog-client",
+    website: "https://blog-api-client-zeta.vercel.app",
+  },
+  {
+    id: nanoid(),
     title: "Minimarkdown",
     stack: "React, Typescript, Redux, Firebase, Tailwind CSS, i18next.",
     description: "Минималистичный текстовый редактор с поддержкой Markdown.",

@@ -6,7 +6,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
     <div className="flex flex-col gap-2 leading-tight border rounded-lg shadow-md sm:shadow-lg sm:shadow-gray-400 shadow-gray-400 border-slate-200 dark:shadow-none dark:bg-slate-800 dark:border-none p-4 pb-5">
       <h3 className="font-bold text-xl dark:text-gray-50">{project.title}</h3>
       <p className="mb-4">
-        <span className="inline-block mr-1 font-bold">Стэк:</span>
+        <span className="inline-block mr-1 font-bold">Стек:</span>
         <span>{project.stack}</span>
       </p>
       <p className="flex-1 mb-4">{project.description}</p>

@@ -16,9 +16,9 @@ export default function Portfolio() {
           <ThemeSwitcher />
         </div>
         <p>
-          Привет! Я фронтэндер, специализирующийся на стеке из Typescript,
-          React, Vite и Tailwind&nbsp;CSS. Также у меня есть опыт работы с
-          Next.js, Sass, PostCSS, Linaria и Redux в связке с Redux&#8209;Saga.
+          Привет! Я fullstack разработчик, специализирующийся на стеке из
+          Typescript, Next.js и Tailwind&nbsp;CSS. Также у меня есть опыт работы
+          с Vue, Express, Firebase, MongoDB и методологией БЭМ.
         </p>
         <p>
           Если хотите посотрудничать, вы можете связаться со мной через Telegram
