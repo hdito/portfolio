@@ -9,7 +9,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
         <span className="inline-block mr-1 font-bold">Стек:</span>
         <span>{project.stack}</span>
       </p>
-      <p className="flex-1 mb-4">{project.description}</p>
+      <p className="flex-1 mb-4 whitespace-pre-wrap">{project.description}</p>
       <div className="flex wrap gap-4">
         <a
           className="flex gap-1 items-center underline underline-offset-[6px] decoration-2 decoration-blue-600 dark:decoration-blue-400 hover:no-underline"
