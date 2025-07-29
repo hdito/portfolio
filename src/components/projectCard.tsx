@@ -3,16 +3,16 @@ import { FiExternalLink } from "react-icons/fi";
 
 export const ProjectCard = ({ project }: { project: Project }) => {
   return (
-    <div className="flex flex-col gap-2 leading-tight border rounded-lg shadow-md sm:shadow-lg sm:shadow-gray-400 shadow-gray-400 border-slate-200 dark:shadow-none dark:bg-slate-800 dark:border-none p-4 pb-5">
-      <h3 className="font-bold text-xl dark:text-gray-50">{project.title}</h3>
+    <div className="flex flex-col gap-2 rounded-lg border border-slate-200 p-4 pb-5 leading-tight shadow-md shadow-gray-400 dark:border-none dark:bg-slate-800 dark:shadow-none sm:shadow-lg sm:shadow-gray-400">
+      <h3 className="text-xl font-bold dark:text-gray-50">{project.title}</h3>
       <p className="mb-4">
-        <span className="inline-block mr-1 font-bold">Стек:</span>
+        <span className="mr-1 inline-block font-bold">Стек:</span>
         <span>{project.stack}</span>
       </p>
-      <p className="flex-1 mb-4 whitespace-pre-wrap">{project.description}</p>
-      <div className="flex wrap gap-4">
+      <p className="mb-4 flex-1 whitespace-pre-wrap">{project.description}</p>
+      <div className="wrap flex gap-4">
         <a
-          className="flex gap-1 items-center underline underline-offset-[6px] decoration-2 decoration-blue-600 dark:decoration-blue-400 hover:no-underline"
+          className="flex items-center gap-1 underline decoration-blue-600 decoration-2 underline-offset-[6px] hover:no-underline dark:decoration-blue-400"
           href={project.website}
           target="_blank"
           rel="noopener noreferrer"
@@ -21,7 +21,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
           <FiExternalLink />
         </a>
         <a
-          className="flex gap-1 items-center underline underline-offset-[6px] decoration-2 decoration-blue-600 dark:decoration-blue-400 hover:no-underline"
+          className="flex items-center gap-1 underline decoration-blue-600 decoration-2 underline-offset-[6px] hover:no-underline dark:decoration-blue-400"
           href={project.codeSource}
           target="_blank"
           rel="noopener noreferrer"

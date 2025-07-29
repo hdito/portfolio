@@ -33,7 +33,7 @@ export const ThemeSwitcher = () => {
     <>
       {darkTheme !== null && (
         <button
-          className="h-12 absolute -top-4 right-0 flex justify-center items-end p-1 text-2xl text-white dark:text-gray-800 rounded-b-full bg-black dark:bg-gray-50 "
+          className="absolute -top-4 right-0 flex h-12 items-end justify-center rounded-b-full bg-black p-1 text-2xl text-white dark:bg-gray-50 dark:text-gray-800"
           onClick={() => setDarkTheme((prev) => !prev)}
         >
           {darkTheme ? (
