@@ -12,22 +12,6 @@ export const projects: Project[] = [
   },
   {
     id: nanoid(),
-    title: "Minimarkdown",
-    stack: "React, TypeScript, Redux, Firebase, Tailwind CSS, i18next.",
-    description: "Минималистичный текстовый редактор с поддержкой Markdown.",
-    codeSource: "https://github.com/hdito/minimarkdown",
-    website: "https://minimarkdown.web.app/",
-  },
-  {
-    id: nanoid(),
-    title: "Pomodoro",
-    stack: "Next.js, TypeScript, Redux, Sass.",
-    description: "Таймер для работы по методу помодоро со списком дел.",
-    codeSource: "https://github.com/hdito/pomodoro",
-    website: "https://pomodoro.vercel.app",
-  },
-  {
-    id: nanoid(),
     title: "Где Перепечко?",
     stack: "React, TypeScript, Firebase, Tailwind CSS.",
     description: "Игра из одноимённой группы в\xa0VK.",
