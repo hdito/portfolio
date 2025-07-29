@@ -1,1 +1,3 @@
-export type ComponentWithProps<T = undefined> = (props: T) => JSX.Element;
+export type ComponentWithProps<T = Record<string, unknown>> = (
+  props: T,
+) => JSX.Element;
