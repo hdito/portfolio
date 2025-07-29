@@ -1,7 +1,14 @@
+import { ComponentWithProps } from "@/types/componentWithProps";
 import { Project } from "@/types/projectType";
 import { FiExternalLink } from "react-icons/fi";
 
-export const ProjectCard = ({ project }: { project: Project }) => {
+type ProjectCardProps = {
+  project: Project;
+};
+
+export const ProjectCard: ComponentWithProps<ProjectCardProps> = ({
+  project,
+}) => {
   return (
     <div className="flex flex-col gap-2 rounded-lg border border-slate-200 p-4 pb-5 leading-tight shadow-md shadow-gray-400 dark:border-none dark:bg-slate-800 dark:shadow-none sm:shadow-lg sm:shadow-gray-400">
       <h3 className="text-xl font-bold dark:text-gray-50">{project.title}</h3>

@@ -1,10 +1,11 @@
+import { ProjectCard } from "@/components/projectCard";
+import { ThemeSwitcher } from "@/components/themeSwitcher";
+import { projects } from "@/projects";
+import { ComponentWithProps } from "@/types/componentWithProps";
 import { FaTelegramPlane } from "react-icons/fa";
 import { GrMail } from "react-icons/gr";
-import { ProjectCard } from "@/components/projectCard";
-import { projects } from "@/projects";
-import { ThemeSwitcher } from "@/components/themeSwitcher";
 
-export default function Portfolio() {
+const Portfolio: ComponentWithProps = () => {
   return (
     <div className="flex min-h-screen flex-col items-center bg-white font-noto text-black dark:bg-slate-900 dark:text-gray-200">
       <div className="flex flex-col justify-center gap-4 px-4 py-4 pb-12 sm:max-w-columns-8-1280 sm:px-0 2xl:max-w-columns-6-1920">
@@ -16,8 +17,9 @@ export default function Portfolio() {
           <ThemeSwitcher />
         </div>
         <p>
-          Привет! Я веб-разработчик, и я делаю сайты на React с Angular. За пару лет я успел поработать как с
-          многолетними legacy кодовыми базами, так и сделать пару MVP с нуля.
+          Привет! Я веб-разработчик, и я делаю сайты на React с Angular. За пару
+          лет я успел поработать как с многолетними legacy кодовыми базами, так
+          и сделать пару MVP с нуля.
         </p>
         <p>
           Если хотите посотрудничать, вы можете связаться со мной через Telegram
@@ -58,4 +60,6 @@ export default function Portfolio() {
       </div>
     </div>
   );
-}
+};
+
+export default Portfolio;

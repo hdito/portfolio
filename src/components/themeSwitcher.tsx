@@ -1,7 +1,8 @@
+import { ComponentWithProps } from "@/types/componentWithProps";
 import { useEffect, useState } from "react";
 import { IoMoon, IoSunny } from "react-icons/io5";
 
-export const ThemeSwitcher = () => {
+export const ThemeSwitcher: ComponentWithProps = () => {
   const [darkTheme, setDarkTheme] = useState<boolean | null>(null);
 
   useEffect(() => {
