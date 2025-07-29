@@ -16,9 +16,8 @@ export default function Portfolio() {
           <ThemeSwitcher />
         </div>
         <p>
-          Привет! Я fullstack разработчик, специализирующийся на стеке из
-          Typescript, Next.js и Tailwind&nbsp;CSS. Также у меня есть опыт работы
-          с Vue, Express, Firebase, MongoDB и методологией БЭМ.
+          Привет! Я веб-разработчик, и я делаю сайты на React с Angular. За пару лет я успел поработать как с
+          многолетними legacy кодовыми базами, так и сделать пару MVP с нуля.
         </p>
         <p>
           Если хотите посотрудничать, вы можете связаться со мной через Telegram
