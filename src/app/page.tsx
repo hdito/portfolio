@@ -1,5 +1,5 @@
-import { ProjectCard } from "@/components/projectCard";
-import { ThemeSwitcher } from "@/components/themeSwitcher";
+import { ProjectCard } from "@/components/ProjectCard";
+import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 import { projects } from "@/projects";
 import { ComponentWithProps } from "@/types/componentWithProps";
 import { FaTelegramPlane } from "react-icons/fa";
