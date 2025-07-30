@@ -15,8 +15,7 @@ export const ThemeSwitcher: ComponentWithProps = () => {
   const [darkTheme, setDarkTheme] = useState<boolean | null>(null);
 
   useEffect(() => {
-    // This is the easiest way to use browser API in Next.js 13
-    // After switching to App router I'll no longer need it
+    // Hack to access browser API while still prerendering component
     if (
       localStorage?.theme === THEME.DARK ||
       (!(THEME_STORAGE_KEY in localStorage) &&
