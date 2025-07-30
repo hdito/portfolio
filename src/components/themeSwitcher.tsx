@@ -1,3 +1,4 @@
+"use client";
 import { ComponentWithProps } from "@/types/componentWithProps";
 import { useEffect, useState } from "react";
 import { IoMoon, IoSunny } from "react-icons/io5";
