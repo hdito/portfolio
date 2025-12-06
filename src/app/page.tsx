@@ -1,11 +1,11 @@
 import { ProjectCard } from "@/components/ProjectCard";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 import { projects } from "@/projects";
-import { ComponentWithProps } from "@/types/componentWithProps";
 import { FaTelegramPlane } from "react-icons/fa";
 import { GrMail } from "react-icons/gr";
+import type { JSX } from "react";
 
-const Portfolio: ComponentWithProps = () => {
+const Portfolio: () => JSX.Element = () => {
   return (
     <div className="flex min-h-screen flex-col items-center bg-white font-noto text-black dark:bg-slate-900 dark:text-gray-200">
       <div className="flex flex-col justify-center gap-4 px-4 py-4 pb-12 sm:max-w-columns-8-1280 sm:px-0 2xl:max-w-columns-6-1920">
